@@ -5,7 +5,8 @@ public class diagnostico {
         
         estudiante e1 = new estudiante("Ana", 8);
         estudiante e2 = new estudiante("Juan", 6);
-        
+        //comentario de prueba
+        //2do comentaqrio prueba
         comision[0] = e1;
         comision[1] = e2;
         
