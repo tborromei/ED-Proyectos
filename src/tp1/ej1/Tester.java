@@ -1,4 +1,4 @@
-package TP1.EJ1;
+package tp1.ej1;
 
 public class Tester {
 
