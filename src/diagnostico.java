@@ -24,6 +24,12 @@ public class diagnostico {
     // Pregunta 3: Implementar este método
     public static estudiante buscarMejorPromedio(estudiante[] arreglo) {
         // Escribimos entre todos este método
-        return null; 
+        estudiante mejor = arreglo[0];
+        for (int i = 1; i < arreglo.length; i++) {
+            if (arreglo[i] != null && arreglo[i].nota > mejor.nota) {
+                mejor = arreglo[i];
+            }
+        }
+        return mejor; 
     }
 }
