@@ -4,7 +4,7 @@ public class TesterConjunto {
 
     public static void main(String[] args) {
 
-        Conjunto<Integer> c = new ConjuntoArreglo<Integer>(5);
+        Conjunto<Integer> c = new ConjuntoVector<Integer>(5);
 
         System.out.println(c.size());
         System.out.println(c.capacity());

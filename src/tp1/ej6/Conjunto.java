@@ -1,4 +1,4 @@
-package tp1.ej4;
+package tp1.ej6;
 
 public interface Conjunto<E> {
     public abstract int size();

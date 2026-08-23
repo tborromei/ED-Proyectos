@@ -1,17 +1,17 @@
 package tp1.ej5;
 
 public interface Conjunto<E> {
-    public int size();
+    public abstract int size();
 
-    public int capacity();  
+    public abstract int capacity();  
 
-    public boolean isEmpty();
+    public abstract boolean isEmpty();
 
-    public E get(int i);
+    public abstract E get(int i);
 
-    public void put(E elem);
+    public abstract void put(E elem);
 
-    public boolean pertenece(E elem);
+    public abstract boolean pertenece(E elem);
 
-    public Conjunto<E> interseccion(Conjunto<E> c);
+    public abstract Conjunto<E> interseccion(Conjunto<E> c);
 }
