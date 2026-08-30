@@ -7,5 +7,6 @@
     "github.copilot.enable": {
     "*": true,
     "java": false
-    }
+    },
+    "java.debug.settings.onBuildFailureProceed": true
 }
