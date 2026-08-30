@@ -10,7 +10,7 @@ public class PilaConArreglo<E> implements Stack<E> {
 	
 	public PilaConArreglo() {
 		tope=0;
-		arreglo=(E[]) new Object[50];	
+		arreglo=(E[]) new Object[5];	
 	}
 
 	@Override

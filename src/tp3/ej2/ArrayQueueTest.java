@@ -1,13 +1,14 @@
 package tp3.ej2;
 
 import ar.edu.uns.cs.ed.tdas.excepciones.EmptyQueueException;
+import ar.edu.uns.cs.ed.tdas.tdacola.Queue;
 
 import static org.junit.Assert.*;
 import org.junit.*;
 
 
 public class ArrayQueueTest {
-	private ArrayQueue<String> c; //interface
+	private Queue<String> c; //interface
 	private String n1,n2,n3;
 	
 	/*
@@ -15,9 +16,9 @@ public class ArrayQueueTest {
 	 *
 	 */
 
-	private ArrayQueue<String> getQueue()
+	private Queue<String> getQueue()
 	{
-		return new ArrayQueue<String>();
+		return new TDACola.ArrayQueue<String>();
 	 }
 	
 	@Before public void setUp()

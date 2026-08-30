@@ -13,7 +13,7 @@ public class PilaConArregloTest {
 
 	private Stack<String> getStack()
 	{
-		return new PilaConArreglo<String>();	  
+		return new TDAPila.PilaConArreglo<String>();	  
 	 }
 	
 	/*
