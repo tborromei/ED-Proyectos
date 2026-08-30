@@ -1,6 +1,5 @@
 package tp2.ej1;
 import java.util.Stack;
-import java.util.Queue;
 
 public class ej1 {
 

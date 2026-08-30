@@ -1,5 +1,4 @@
 package tp2.ej3;
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class ej3 {
