@@ -1,6 +1,6 @@
 package ar.edu.uns.cs.ed.tdas;
 
-public class Nodo<E> {
+public class Nodo<E> implements Position<E>{
     private E elemento;
     private Nodo<E> siguiente;
     
@@ -20,6 +20,9 @@ public class Nodo<E> {
         this.siguiente=siguiente;
     }
 
+    public E element(){
+        return elemento;
+    }
     public E getElemento(){
         return elemento;
     }
