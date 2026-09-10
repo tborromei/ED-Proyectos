@@ -17,26 +17,27 @@ public class ArrayQueue<E> implements Queue<E> {
 	 */
 	
 	public ArrayQueue() {
-		cola= (E[])new Object[longitud];
+		cola = (E[]) new Object[longitud];
 		i=0;
 		f=0;
 	}
 	
 	public boolean isEmpty() {
-		return (i==f);
+		return (i == f);
 	}
 	public int size() {
-		return((cola.length - i + f)%cola.length);
+		return ((cola.length - i + f) % cola.length);
 	}
 	
 	public void enqueue(E e) {
-		if (cola.length -1 ==size()){
-			E[] aux=copiar(i);
-			f=size();
-			i=0;
-			cola=aux;}
-		cola[f]=e;
-		f=(f+1)%cola.length;
+		if (cola.length -1 == size()){
+			E[] aux = copiar(i);
+			f = size();
+			i = 0;
+			cola = aux;
+		}
+		cola[f] = e;
+		f = (f+1) % cola.length;
 	}
 	public E dequeue() throws EmptyQueueException{
 		if (isEmpty())
@@ -45,7 +46,8 @@ public class ArrayQueue<E> implements Queue<E> {
 			E aux=cola[i];
 			cola[i]=null;
 			i=(i+1)%cola.length;
-			return aux;}
+			return aux;
+		}
 		
 	}
 	public E front() throws EmptyQueueException{
@@ -56,10 +58,10 @@ public class ArrayQueue<E> implements Queue<E> {
 	}
 	
 	private E[] copiar(int m) {
-		E[] aux= (E[])new Object[2*cola.length];
-		for (int j=0; j<size();j++){
-			aux[j]=cola[m];
-			m=(m+1)%cola.length;}
+		E[] aux= (E[]) new Object [2*cola.length];
+		for (int j=0; j<size(); j++ ){
+			aux[j] = cola[m];
+			m= (m+1) % cola.length;}
 		return aux;
 		}
 	
