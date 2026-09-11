@@ -1,11 +1,10 @@
-package ar.edu.uns.cs.ed.tdas.tdalista;
+package ar.edu.uns.cs.ed.tdas.ejercicios.tp4.ej1;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import ar.edu.uns.cs.ed.tdas.DNodo;
 import ar.edu.uns.cs.ed.tdas.Position;
-import ar.edu.uns.cs.ed.tdas.ElementIterator;
-
+import ar.edu.uns.cs.ed.tdas.tdalista.PositionList;
 import ar.edu.uns.cs.ed.tdas.excepciones.*;
 
 public class ListaDobleEnlace<E> implements PositionList<E> {
@@ -179,7 +178,25 @@ public class ListaDobleEnlace<E> implements PositionList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new ElementIterator<E>(this);
+        return new Iterator<E>() {
+            private DNodo<E> actual = header.getSiguiente();
+
+            @Override
+            public boolean hasNext() {
+                return actual != trailer;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException("No hay más elementos en la lista.");
+                }
+
+                E elemento = actual.element();
+                actual = actual.getSiguiente();
+                return elemento;
+            }
+        };
     }
 
     @Override
@@ -194,30 +211,6 @@ public class ListaDobleEnlace<E> implements PositionList<E> {
 
         return posiciones;
     }
-
-    /**
-     * Agrega e1 como segundo elemento y e2 como anteultimo elemento.
-     *
-     * @throws InvalidOperationException si la lista tiene exactamente un
-     *         elemento, porque la segunda posicion y la anteultima coinciden.
-     */
-    public void agregarSegundoYAnteultimo(E e1, E e2) {
-        if (size == 1) {
-            throw new InvalidOperationException(
-                "No se pueden agregar dos elementos distintos en la misma posicion."
-            );
-        }
-
-        if (size == 0) {
-            addFirst(e2);
-            addLast(e1);
-        } else {
-            addAfter(header.getSiguiente(), e1);
-            addBefore(trailer.getAnterior(), e2);
-        }
-    }
-
-    
 
 
 }

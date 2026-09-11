@@ -7,13 +7,13 @@ import ar.edu.uns.cs.ed.tdas.excepciones.BoundaryViolationException;
 import ar.edu.uns.cs.ed.tdas.tdalista.PositionList;
 
 import ar.edu.uns.cs.ed.tdas.Position;
-
+import ar.edu.uns.cs.ed.tdas.tdalista.ListaDobleEnlace;
 
 public class EjerciciosListas {
 	
 	public static void main(String[] args) {
 		
-		PositionList<Character> l= new ListaDobleEnlace<Character>();
+		PositionList<Character> l = new ListaDobleEnlace<Character>();
 		l.addLast('a');
 		l.addLast('a');
 		l.addLast('b');
