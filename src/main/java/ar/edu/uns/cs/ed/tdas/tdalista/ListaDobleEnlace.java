@@ -217,6 +217,37 @@ public class ListaDobleEnlace<E> implements PositionList<E> {
         }
     }
 
+    /**
+     * Elimina hasta k elementos consecutivos a partir de p, incluyendola.
+     *
+     * @return la cantidad de elementos efectivamente eliminados
+     * @throws IllegalArgumentException si k no es mayor que cero
+     * @throws InvalidPositionException si p no es una posicion valida
+     */
+    public int eliminarDesdePosicion(Position<E> p, int k) {
+        if (k <= 0) {
+            throw new IllegalArgumentException(
+                "La cantidad de elementos a eliminar debe ser mayor que cero."
+            );
+        }
+
+        DNodo<E> primeroAEliminar = checkPosition(p);
+        DNodo<E> posteriorAlBloque = primeroAEliminar;
+        int eliminados = 0;
+
+        while (eliminados < k && posteriorAlBloque != trailer) {
+            posteriorAlBloque = posteriorAlBloque.getSiguiente();
+            eliminados++;
+        }
+
+        DNodo<E> anteriorAlBloque = primeroAEliminar.getAnterior();
+        anteriorAlBloque.setSiguiente(posteriorAlBloque);
+        posteriorAlBloque.setAnterior(anteriorAlBloque);
+        size -= eliminados;
+
+        return eliminados;
+    }
+
     
 
 
