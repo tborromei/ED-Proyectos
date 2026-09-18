@@ -7,35 +7,58 @@ import ar.edu.uns.cs.ed.tdas.tdalista.PositionList;
 import ar.edu.uns.cs.ed.tdas.Position;
 import java.util.Iterator;
 import ar.edu.uns.cs.ed.tdas.tdalista.ListaDobleEnlace;
-public class ej6b {
-    public static PositionList<Integer> intercalarOrdenadas(PositionList<Integer> l1, PositionList<Integer> l2) {
+
+public class ej6b2 {
+    public static PositionList<Integer> intercalarOrdenadas(
+        PositionList<Integer> l1, PositionList<Integer> l2) {
 
         PositionList<Integer> resultado = new ListaDobleEnlace<>();
 
         Iterator<Integer> it1 = l1.iterator();
         Iterator<Integer> it2 = l2.iterator();
 
-        Integer a = it1.hasNext() ? it1.next() : null;
-        Integer b = it2.hasNext() ? it2.next() : null;
+        Integer a = siguiente(it1);
+        Integer b = siguiente(it2);
 
         while (a != null || b != null) {
             Integer elegido;
 
-            if (b == null || (a != null && a <= b)) {
+            // Decisión 1: elegir y avanzar el recorrido correspondiente.
+            if (a == null) {
+                elegido = b;
+                b = siguiente(it2);
+            } else if (b == null) {
                 elegido = a;
-                a = it1.hasNext() ? it1.next() : null;
+                a = siguiente(it1);
+            } else if (a <= b) {
+                elegido = a;
+                a = siguiente(it1);
             } else {
                 elegido = b;
-                b = it2.hasNext() ? it2.next() : null;
+                b = siguiente(it2);
             }
 
-            if (resultado.isEmpty() || !resultado.last().element().equals(elegido)) {
+            // Decisión 2: agregar solamente si no es un repetido.
+            if (resultado.isEmpty()) {
+                resultado.addLast(elegido);
+            } else if (!resultado.last().element().equals(elegido)) {
                 resultado.addLast(elegido);
             }
         }
 
         return resultado;
     }
+
+    
+    private static Integer siguiente(Iterator<Integer> it) {
+        if (it.hasNext()) {
+            return it.next();
+        } else {
+            return null;
+        }
+    }
+    
+
     public static void main(String[] args) {
         PositionList<Integer> l1 = new ListaDobleEnlace<>();
         PositionList<Integer> l2 = new ListaDobleEnlace<>();

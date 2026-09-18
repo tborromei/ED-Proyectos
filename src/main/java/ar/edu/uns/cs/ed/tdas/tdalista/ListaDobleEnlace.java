@@ -64,7 +64,7 @@ public class ListaDobleEnlace<E> implements PositionList<E> {
 
     private DNodo<E> checkPosition(Position<E> p) {
         if (size==0) {
-            throw new InvalidPositionException("La lista está vacía.");
+            throw new EmptyListException("La lista está vacía.");
         }
 
         if (p == null) {

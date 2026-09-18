@@ -10,11 +10,9 @@ import ar.edu.uns.cs.ed.tdas.tdalista.ListaDobleEnlace;
 
 
 public class ej7 {
-    public static <E> void eliminar(
-        PositionList<E> l1, PositionList<E> l2) {
+    public static <E> void eliminar(PositionList<E> l1, PositionList<E> l2) {
 
-    PositionList<Position<E>> aEliminar =
-        new ListaDobleEnlace<>();
+    PositionList<Position<E>> aEliminar = new ListaDobleEnlace<>();
 
     // Buscar todas las posiciones de l1 que debemos eliminar.
     for (Position<E> p : l1.positions()) {

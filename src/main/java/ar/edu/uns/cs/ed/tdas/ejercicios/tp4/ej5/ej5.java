@@ -9,17 +9,17 @@ import java.util.Iterator;
 import ar.edu.uns.cs.ed.tdas.tdalista.ListaDobleEnlace;
 
 public class ej5 {
-    public static Iterable<Character> eliminarCoincidentes(PositionList<Character> l1, PositionList<Character> l2) {
+    public static<E> Iterable<E> eliminarCoincidentes(PositionList<E> l1, PositionList<E> l2) {
 
-        PositionList<Position<Character>> aEliminar = new ListaDobleEnlace<>();
+        PositionList<Position<E>> aEliminar = new ListaDobleEnlace<>();
 
-        PositionList<Character> eliminados = new ListaDobleEnlace<>();
+        PositionList<E> eliminados = new ListaDobleEnlace<>();
 
         // Buscar las posiciones de l2 cuyos elementos aparecen en l1.
-        for (Position<Character> p : l2.positions()) {
-            Character elemento = p.element();
+        for (Position<E> p : l2.positions()) {
+            E elemento = p.element();
 
-            Iterator<Character> it = l1.iterator();
+            Iterator<E> it = l1.iterator();
             boolean encontrado = false;
 
             while (it.hasNext() && !encontrado) {
@@ -34,8 +34,8 @@ public class ej5 {
         }
 
         // Eliminar esas posiciones y guardar los elementos retirados.
-        for (Position<Character> p : aEliminar) {
-            Character eliminado = l2.remove(p);
+        for (Position<E> p : aEliminar) {
+            E eliminado = l2.remove(p);
             eliminados.addLast(eliminado);
         }
 
