@@ -12,7 +12,7 @@ public class ej2parcialactual {
      * aunque haya otros elementos intercalados. No modifica las listas.
      * Compara por equivalencia y supone listas y elementos no nulos.
      */
-    public static <E> boolean contieneEnOrden(PositionList<E> l1, PositionList<E> l2) {
+    public static <E> boolean estaContenidaOrdenadamente(PositionList<E> l1, PositionList<E> l2) {
 
         Iterator<E> it2 = l2.iterator();
 
@@ -119,6 +119,6 @@ public class ej2parcialactual {
         l2.addLast('b');
 
         // Para depurar: poner un breakpoint aqui y entrar al metodo con F11.
-        boolean resultado = contieneEnOrden(l1, l2); // Esperado: true.
+        boolean resultado = estaContenidaOrdenadamente(l1, l2); // Esperado: true.
     }
 }

@@ -248,6 +248,24 @@ public class ListaDobleEnlace<E> implements PositionList<E> {
         return eliminados;
     }
 
+    //modificar la lista que recibe el mensaje dejando solo los elementos en posiciones pares
+    public PositionList<E> soloPares(E elem){
+        PositionList<E> lista = new ListaDobleEnlace<>();
+
+        DNodo<E> pos = header.getSiguiente();
+        int cant = size;
+        for (int i=1; i<=cant; i++){
+            if (i % 2 == 0){
+                if (pos.element().equals(elem)){
+                    lista.addLast(pos.element());
+                    this.remove(pos);
+                }
+            }
+            pos = pos.getSiguiente();
+        }
+        return lista;
+    }
+
     
 
 
