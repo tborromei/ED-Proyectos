@@ -1,6 +1,7 @@
 package ar.edu.uns.cs.ed.tdas.tdamapeo;
 
 import ar.edu.uns.cs.ed.tdas.excepciones.*;
+import ar.edu.uns.cs.ed.tdas.tdadiccionario.DiccionarioConLista;
 import ar.edu.uns.cs.ed.tdas.Entry;
 
 import static org.junit.Assert.*;
@@ -11,6 +12,7 @@ import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 
+import ar.edu.uns.cs.ed.tdas.tdamapeo.MapeoConLista;
 
 public class MapTest {
 
@@ -23,7 +25,7 @@ public class MapTest {
 	private Map<Integer, Integer> getMapeo() {
 
 		Map<Integer, Integer> mapeo = null;
-		//mapeo = new MapeoConHash<Integer, Integer>(); //TODO: Descomentar y crear instancia del TDA a testear
+		mapeo = new MapeoConLista<Integer, Integer>(); //TODO: Descomentar y crear instancia del TDA a testear
 		return mapeo;
 
 	}
